@@ -1,0 +1,91 @@
+[project]
+name = "json-to-docx-resume"
+version = "0.1.0"
+description = "Generate a styled DOCX resume from a JSON Resume file, using an existing template's formatting."
+requires-python = ">=3.10"
+dependencies = [
+    "python-docx==1.2.0",
+    "docxtpl==0.20.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.3.3",
+    "pytest-html==4.2.0",
+    "pytest-cov==7.1.0",
+    "ruff==0.14.0",
+    "mypy==1.18.2",
+]
+
+[project.scripts]
+resume-docx = "resume_docx.cli:main"
+resume-docx-gui = "resume_docx.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["resume_docx*"]
+
+[tool.setuptools.package-data]
+# PEP 561 marker: tells type checkers in dependent projects that this
+# package's annotations are real. Added only once mypy --strict passes —
+# shipping it before that would be a claim the code doesn't support.
+resume_docx = ["py.typed"]
+
+[tool.pytest.ini_options]
+# No `pythonpath` entry on purpose. Under the src/ layout the repo root holds
+# no importable code, so tests can only reach `resume_docx` through the
+# installed (editable) package — which means a passing test run also proves
+# the packaging is correct, instead of accidentally importing the working tree.
+# Every `pytest` run writes a real, inspectable report — not just terminal
+# output that scrolls away: a self-contained HTML report with per-test
+# pass/fail/timing, plus a JUnit XML for tooling/CI, plus a coverage
+# report (terminal summary + HTML). All under test-results/ (one gitignore
+# entry, one thing to rm -rf), generated fresh each run, not committed.
+addopts = "--html=test-results/test-report.html --self-contained-html --junitxml=test-results/test-report.xml --cov=resume_docx --cov-report=term-missing --cov-report=html:test-results/htmlcov --cov-fail-under=75"
+
+[tool.ruff]
+line-length = 110
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # import sorting
+    "UP",       # pyupgrade
+    "B",        # bugbear
+    "SIM",      # simplify
+    "C4",       # comprehensions
+    "RET",      # return values
+    "PIE",      # misc lints
+    "N",        # naming
+    "PTH",      # prefer pathlib
+    "RUF",      # ruff's own
+]
+ignore = [
+    # Ambiguous-unicode warnings. The test fixtures deliberately contain
+    # en-dashes, curly apostrophes and accented characters — see
+    # tests/fixtures/README.md — and the template renders an en-dash in every
+    # date range. These rules would flag exactly the coverage we want to keep.
+    "RUF001",
+    "RUF002",
+    "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# The CLI's whole job is writing to stdout/stderr.
+"src/resume_docx/cli.py" = ["T201"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["src"]
+strict = true
+
+[[tool.mypy.overrides]]
+# docxtpl ships no type information and has no stubs on typeshed.
+module = ["docxtpl.*"]
+ignore_missing_imports = true
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"

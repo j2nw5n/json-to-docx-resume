@@ -1,0 +1,37 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        id: install
+        run: pip install -e ".[dev]"
+
+      # Each check runs even when an earlier one failed, so a single push
+      # surfaces every problem rather than one per round trip. Gated on the
+      # install having succeeded — otherwise a failed install would report
+      # three confusing "command not found" failures instead of one real one.
+      - name: ruff (lint)
+        if: steps.install.outcome == 'success'
+        run: ruff check --output-format=github src tests
+
+      - name: ruff (format)
+        if: '!cancelled() && steps.install.outcome == ''success'''
+        run: ruff format --check src tests
+
+      - name: mypy (strict)
+        if: '!cancelled() && steps.install.outcome == ''success'''
+        run: mypy

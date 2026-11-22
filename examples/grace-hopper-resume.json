@@ -1,0 +1,125 @@
+{
+  "basics": {
+    "name": "Grace Brewster Murray Hopper",
+    "label": "Computer Scientist | Rear Admiral, United States Navy",
+    "email": "grace.hopper@example.com",
+    "phone": "(555) 0100",
+    "summary": "Mathematician and computer scientist who spent four decades arguing that computers should be programmed in something closer to English than to machine code — and then built the tools to prove it. Wrote the first compiler, led the team behind FLOW-MATIC, and shaped the language work that became COBOL. Retired from the Navy as a rear admiral at 79, the oldest serving officer at the time."
+  },
+  "work": [
+    {
+      "name": "Digital Equipment Corporation",
+      "location": "Maynard, MA",
+      "position": "Senior Consultant",
+      "startDate": "1986-08",
+      "endDate": "1992-01",
+      "summary": "Represented the company on standards and education, lecturing widely on computing history and the cost of holding onto legacy practice.",
+      "highlights": [
+        "Delivered roughly 200 talks a year to industry, academic, and government audiences.",
+        "Advised engineering groups on programming language standards and adoption."
+      ]
+    },
+    {
+      "name": "United States Navy",
+      "location": "Washington, DC",
+      "position": "Director, Navy Programming Languages Group",
+      "startDate": "1967-08",
+      "endDate": "1986-08",
+      "summary": "Recalled to active duty to standardize the Navy's fragmented programming practice across hundreds of installations.",
+      "highlights": [
+        "Standardized the Navy's high-level languages and wrote the validation suites that certified compilers against them.",
+        "Directed the conversion of legacy payroll and logistics systems to standardized COBOL.",
+        "Promoted to commodore in 1983 and to rear admiral in 1985; retired as the oldest serving officer in the Navy."
+      ]
+    },
+    {
+      "name": "Sperry Rand Corporation",
+      "location": "Philadelphia, PA",
+      "position": "Director of Automatic Programming",
+      "startDate": "1959-01",
+      "endDate": "1971-06",
+      "summary": "Built and led the group responsible for turning compiler research into products customers could actually use.",
+      "highlights": [
+        "Served as technical advisor to the CODASYL committee whose work produced COBOL.",
+        "Argued successfully that data processing languages should read as English statements rather than mathematical notation.",
+        "Established compiler validation as a discipline, so a vendor's claim of conformance could be tested rather than trusted."
+      ]
+    },
+    {
+      "name": "Eckert–Mauchly Computer Corporation",
+      "location": "Philadelphia, PA",
+      "position": "Senior Mathematician",
+      "startDate": "1949-06",
+      "endDate": "1959-01",
+      "summary": "Joined a nine-person startup building the UNIVAC I, the first commercial computer produced in the United States.",
+      "highlights": [
+        "Wrote the A-0 system in 1952, the first compiler: a program that translated symbolic notation into machine code.",
+        "Led development of FLOW-MATIC, the first programming language to use English-like data processing statements.",
+        "Stayed through the company's acquisition by Remington Rand and its merger into Sperry Rand."
+      ]
+    },
+    {
+      "name": "Harvard Computation Laboratory",
+      "location": "Cambridge, MA",
+      "position": "Research Fellow in Engineering Sciences and Applied Physics",
+      "startDate": "1946-01",
+      "endDate": "1949-06",
+      "summary": "Continued wartime work on the Mark series of electromechanical computers as a civilian researcher.",
+      "highlights": [
+        "Co-authored the operating manuals for the Mark II and Mark III.",
+        "Popularized \"debugging\" as the name for the work, after a moth was found shorting a relay in the Mark II."
+      ]
+    },
+    {
+      "name": "Earlier Experience",
+      "position": "",
+      "startDate": "1931",
+      "endDate": "1946",
+      "summary": "Taught mathematics at Vassar College from 1931, reaching associate professor. Joined the United States Naval Reserve in 1943 and was assigned to the Bureau of Ships Computation Project at Harvard, where she programmed the Mark I to compute ballistics tables and wrote its 561-page manual."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages & Systems",
+      "keywords": ["COBOL", "FLOW-MATIC", "MATH-MATIC", "A-0 compiler series", "UNIVAC I", "Harvard Mark I/II/III"]
+    },
+    {
+      "name": "Technical Leadership",
+      "keywords": ["Compiler design", "Language standardization", "Conformance validation suites", "Legacy system migration"]
+    },
+    {
+      "name": "Standards & Governance",
+      "keywords": ["CODASYL technical advisory", "ANSI language standards", "Department of Defense procurement requirements"]
+    },
+    {
+      "name": "Communication",
+      "keywords": ["Technical writing", "Public speaking", "Executive advocacy for unpopular positions"]
+    }
+  ],
+  "education": [
+    {
+      "studyType": "Doctor of Philosophy",
+      "area": "Mathematics",
+      "institution": "Yale University",
+      "location": "New Haven, CT",
+      "startDate": "1930",
+      "endDate": "1934"
+    },
+    {
+      "studyType": "Master of Arts",
+      "area": "Mathematics",
+      "institution": "Yale University",
+      "location": "New Haven, CT",
+      "startDate": "1928",
+      "endDate": "1930"
+    },
+    {
+      "studyType": "Bachelor of Arts",
+      "area": "Mathematics and Physics",
+      "institution": "Vassar College",
+      "location": "Poughkeepsie, NY",
+      "startDate": "1924",
+      "endDate": "1928"
+    }
+  ]
+}

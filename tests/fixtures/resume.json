@@ -1,0 +1,55 @@
+{
+  "_comment": "Deliberately salted with characters that break naive XML templating: & < > straight and curly quotes, accented letters, en/em dashes. See tests/fixtures/README.md. Do not 'clean up' this file.",
+  "basics": {
+    "name": "Jane Sámple",
+    "label": "Software Engineer — R&D",
+    "email": "jane.sample@example.com",
+    "phone": "555-123-4567",
+    "summary": "Sample summary for a fictitious engineer, used only to exercise the generator end to end."
+  },
+  "work": [
+    {
+      "name": "Sample & Co",
+      "location": "Montréal, QC",
+      "position": "Senior Engineer",
+      "startDate": "2022-01",
+      "endDate": "2024-06",
+      "summary": "Led a sample team’s roadmap for <legacy> systems.",
+      "highlights": [
+        "Shipped a sample feature that improved a sample metric by >40%.",
+        "Launched the \"Sample\" initiative with R&D and Ops."
+      ]
+    },
+    {
+      "name": "Prior Sample Inc",
+      "location": "Other City, ST",
+      "position": "Engineer",
+      "startDate": "2019-03",
+      "endDate": "2021-12",
+      "summary": "Built sample systems for a sample product.",
+      "highlights": [
+        "Reduced a sample process from N to M steps."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Python", "Go"]
+    },
+    {
+      "name": "Research & Development",
+      "keywords": ["Docker", "Terraform", "A/B testing"]
+    }
+  ],
+  "education": [
+    {
+      "studyType": "Bachelor of Science",
+      "area": "Computer Science",
+      "institution": "Université de Sample",
+      "location": "Sample City, ST",
+      "startDate": "2015",
+      "endDate": "2019"
+    }
+  ]
+}

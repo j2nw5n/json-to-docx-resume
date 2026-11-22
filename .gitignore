@@ -1,0 +1,17 @@
+private-files/
+output/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+
+test-results/
+.coverage
+
+.env
+
+.claude/
+
+notes/
